@@ -1,13 +1,15 @@
 #include "game.h"
+#include "settings.h"
 
 int main(void)
 {
     // Initialization
     //--------------------------------------------------------------------------------------
-    const int screenWidth = 800;
-    const int screenHeight = 600;
 
-    Game game(screenWidth, screenHeight, 60, "Tetris");
+    Game game(settings::screenWidth,
+              settings::screenHeight,
+              settings::fps,
+              "Tetris");
 
     while (!game.CloseGame())
     {

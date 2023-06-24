@@ -11,71 +11,71 @@ private:
 public:
     Vec2() = default; // for empty vector
 
-    Vec2(T x, T y)
+    constexpr Vec2(T x, T y)
         : x(x),
           y(y)
     {
     }
 
     // getters/setters
-    T getX() const { return x; }
-    T getY() const { return y; }
-    void setX(T x_input) { x = x_input; };
-    void setY(T y_input) { y = y_input; };
+    constexpr T getX() const { return x; }
+    constexpr T getY() const { return y; }
+    constexpr void setX(T x_input) { x = x_input; };
+    constexpr void setY(T y_input) { y = y_input; };
 
 public:
     // operator overloading
-    bool operator==(const Vec2 &rhs) const
+    constexpr bool operator==(const Vec2 &rhs) const
     {
         return (x == rhs.x && y == rhs.y);
     }
 
-    bool operator!=(const Vec2 &rhs) const
+    constexpr bool operator!=(const Vec2 &rhs) const
     {
         return !(*this == rhs);
     }
 
-    Vec2 operator+(const Vec2 &rhs) const
+    constexpr Vec2 operator+(const Vec2 &rhs) const
     {
         return {x + rhs.x, y + rhs.y};
     }
 
-    Vec2 operator+(const int rhs) const
+    constexpr Vec2 operator+(const int rhs) const
     {
         return {x + rhs, y + rhs};
     }
 
-    Vec2 operator-(const Vec2 &rhs) const
+    constexpr Vec2 operator-(const Vec2 &rhs) const
     {
         return {x - rhs.x, y - rhs.y};
     }
 
-    Vec2 operator-(const int rhs) const
+    constexpr Vec2 operator-(const int rhs) const
     {
         return {x - rhs, y - rhs};
     }
 
-    Vec2 operator*(const Vec2 &rhs) const
+    constexpr Vec2 operator*(const Vec2 &rhs) const
     {
         return {x * rhs.x, y * rhs.y};
     }
 
-    Vec2 operator*(const int rhs) const
+    constexpr Vec2 operator*(const int rhs) const
     {
         return {x * rhs, y * rhs};
     }
 
-    Vec2 operator*=(const Vec2 &rhs)
+    constexpr Vec2 operator*=(const Vec2 &rhs)
     {
         return *this = *this * rhs;
     }
 
-    Vec2 &operator+=(const Vec2 &rhs)
+    constexpr Vec2 &operator+=(const Vec2 &rhs)
     {
         return *this = *this + rhs;
     }
 
-    Vec2 &operator-=(const Vec2 &rhs)
+    constexpr Vec2 &operator-=(const Vec2 &rhs)
     {
         return *this = *this - rhs;
     }
