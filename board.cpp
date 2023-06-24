@@ -49,6 +49,14 @@ void Board::DrawCell(Vec2<int> pos) const
     raycpp::DrawRectangle(topLeft, Vec2<int>{cellSize, cellSize} - padding, c);
 }
 
+void Board::DrawBorder() const
+{
+    raycpp::DrawRectangleLinesEx(screenPosition - (cellSize / 2),
+                                 Vec2<int>{width * cellSize, height * cellSize} + cellSize,
+                                 cellSize / 2,
+                                 WHITE);
+}
+
 void Board::Draw() const
 {
     for (int iY = 0; iY < height; iY++)
@@ -58,4 +66,6 @@ void Board::Draw() const
             DrawCell(Vec2<int>{iX, iY});
         }
     }
+
+    DrawBorder();
 }

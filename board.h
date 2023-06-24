@@ -25,6 +25,7 @@ public:
 
     void SetCell(Vec2<int> position, Color color);
     void DrawCell(Vec2<int> position) const;
+    void DrawBorder() const;
     void Draw() const;
 
 private:
