@@ -12,15 +12,6 @@ Game::Game(int width, int height, int fps, std::string title)
     assert(!GetWindowHandle()); // triggers when window is already open
     SetTargetFPS(fps);
     InitWindow(width, height, title.c_str());
-
-    // fill board with cells
-    for (int iY = 0; iY < 20; iY++)
-    {
-        for (int iX = 0; iX < 10; iX++)
-        {
-            board.SetCell({iX, iY}, RED);
-        }
-    }
 }
 
 Game::~Game() noexcept

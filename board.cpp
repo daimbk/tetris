@@ -23,6 +23,11 @@ void Board::Cell::Remove()
     bExists = false;
 }
 
+bool Board::Cell::Exists() const
+{
+    return bExists;
+}
+
 Board::Board(Vec2<int> screenPosition, Vec2<int> widthHeight, int cellSize, int padding)
     : screenPosition(screenPosition),
       width(widthHeight.getX()),
@@ -63,9 +68,17 @@ void Board::Draw() const
     {
         for (int iX = 0; iX < width; iX++)
         {
-            DrawCell(Vec2<int>{iX, iY});
+            if (CellExists({iX, iY}))
+            {
+                DrawCell(Vec2<int>{iX, iY});
+            }
         }
     }
 
     DrawBorder();
+}
+
+bool Board::CellExists(Vec2<int> pos) const
+{
+    return cells[pos.getY() * width + pos.getX()].Exists();
 }

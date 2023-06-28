@@ -18,6 +18,7 @@ private:
         void setColor(Color color_input);
         Color getColor() const;
         void Remove();
+        bool Exists() const;
     };
 
 public:
@@ -27,6 +28,7 @@ public:
     void DrawCell(Vec2<int> position) const;
     void DrawBorder() const;
     void Draw() const;
+    bool CellExists(Vec2<int> pos) const;
 
 private:
     std::vector<Cell> cells;
