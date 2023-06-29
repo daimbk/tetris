@@ -48,10 +48,15 @@ void Board::SetCell(Vec2<int> pos, Color color)
 
 void Board::DrawCell(Vec2<int> pos) const
 {
+    Color color = cells[pos.getY() * width + pos.getX()].getColor(); // get color
+    DrawCell(pos, color);
+}
+
+void Board::DrawCell(Vec2<int> pos, Color color) const
+{
     assert(pos.getX() >= 0 && pos.getX() < width && pos.getY() >= 0 && pos.getY() < height); // triggers: x or y are out of bounds
-    Color c = cells[pos.getY() * width + pos.getX()].getColor();                             // get color
     Vec2<int> topLeft = screenPosition + padding + (pos * cellSize);
-    raycpp::DrawRectangle(topLeft, Vec2<int>{cellSize, cellSize} - padding, c);
+    raycpp::DrawRectangle(topLeft, Vec2<int>{cellSize, cellSize} - padding, color);
 }
 
 void Board::DrawBorder() const
