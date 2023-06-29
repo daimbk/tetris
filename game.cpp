@@ -7,7 +7,8 @@ Game::Game(int width, int height, int fps, std::string title)
     : board(settings::boardPosition,
             settings::boardWidthHeight,
             settings::cellSize,
-            settings::padding)
+            settings::padding),
+      tetromino(board)
 {
     assert(!GetWindowHandle()); // triggers when window is already open
     SetTargetFPS(fps);
@@ -41,4 +42,5 @@ void Game::Draw()
 {
     ClearBackground(BLACK);
     board.Draw();
+    tetromino.Draw();
 }

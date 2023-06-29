@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "board.h"
+#include "tetrominoes.h"
 
 class Game
 {
@@ -9,6 +10,7 @@ private:
     void Update();
 
     Board board;
+    Straight tetromino;
 
 public:
     // constructor

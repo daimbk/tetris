@@ -82,3 +82,13 @@ bool Board::CellExists(Vec2<int> pos) const
 {
     return cells[pos.getY() * width + pos.getX()].Exists();
 }
+
+int Board::getWidth() const
+{
+    return width;
+}
+
+int Board::getHeight() const
+{
+    return height;
+}

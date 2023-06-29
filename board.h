@@ -29,6 +29,8 @@ public:
     void DrawBorder() const;
     void Draw() const;
     bool CellExists(Vec2<int> pos) const;
+    int getWidth() const;
+    int getHeight() const;
 
 private:
     std::vector<Cell> cells;
