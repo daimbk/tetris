@@ -7,10 +7,22 @@
 class Tetromino
 {
 public:
+    enum class Rotation
+    {
+        UP,
+        RIGHT,
+        DOWN,
+        LEFT
+    };
+
+public:
     Tetromino(const Board &board, const bool *shape, int dimension, Color color);
     void Draw() const;
+    void RotateClockwise();
+    void RotateCounterClockwise();
 
 private:
+    Rotation currentRotation;
     const Board &board;
     Vec2<int> boardPos;
     const bool *shape;

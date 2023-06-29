@@ -36,6 +36,15 @@ void Game::Tick()
 
 void Game::Update()
 {
+    if (IsKeyPressed(KEY_E))
+    {
+        tetromino.RotateClockwise();
+    }
+
+    if (IsKeyPressed(KEY_Q))
+    {
+        tetromino.RotateCounterClockwise();
+    }
 }
 
 void Game::Draw()
