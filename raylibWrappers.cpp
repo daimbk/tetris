@@ -13,5 +13,5 @@ void raycpp::DrawRectangleLinesEx(Vec2<int> pos, Vec2<int> widthHeight, int line
     assert(pos.getX() >= 0 && pos.getY() >= 0 &&
            pos.getX() < GetScreenWidth() && pos.getY() < GetScreenHeight()); // triggers: when drawing outside screen
     assert(lineThickness > 0);                                               // triggers: line thickness is non existent
-    DrawRectangleLinesEx({(float)pos.getX(), (float)pos.getY(), (float)widthHeight.getX(), (float)widthHeight.getY()}, lineThickness, color);
+    DrawRectangleLinesEx({(float)pos.getX(), (float)pos.getY(), (float)widthHeight.getX(), (float)widthHeight.getY()}, (float)lineThickness, color);
 }
