@@ -10,7 +10,7 @@ private:
     void Update();
 
     Board board;
-    Straight tetromino;
+    Jay tetromino;
 
 public:
     // constructor
